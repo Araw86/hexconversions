@@ -5,4 +5,6 @@ const hexToInt = (hexValue) => {
 
 const intToBits = (intValue, nBits = 32) => [...Array(nBits)].map((x, i) => (intValue >> i) & 1);
 
-module.exports.hexconversions = { hexToInt: hexToInt, intToBits: intToBits };
+const hexconversions = { hexToInt: hexToInt, intToBits: intToBits };
+
+module.exports = hexconversions;
