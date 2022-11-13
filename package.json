@@ -1,0 +1,9 @@
+{
+  "name": "hexconversions",
+  "version": "0.1.0",
+  "description": "converting hex values",
+  "main": "index.js",
+  "author": "Radek Ripa",
+  "license": "MIT",
+  "private": true
+}
