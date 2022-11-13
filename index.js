@@ -1,14 +1,8 @@
 
-function hexToInt(hexValue) {
+const hexToInt = (hexValue) => {
   return parseInt(hexValue, 16);
 }
 
-function intToBits(intValue) {
-  const bitArray = intValue.toString(2);
+const intToBits = (intValue, nBits = 32) => [...Array(nBits)].map((x, i) => (intValue >> i) & 1);
 
-}
-
-export const hexconversions = { hexToInt: hexToInt };
-
-const result = intToBits(123);
-console.log(result);
+module.exports.hexconversions = { hexToInt: hexToInt, intToBits: intToBits };
