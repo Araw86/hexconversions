@@ -5,5 +5,9 @@
   "main": "index.js",
   "author": "Radek Ripa",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "repository": {
+    "url": "https://github.com/Araw86/hexconversions",
+    "type": "git"
+  }
 }
