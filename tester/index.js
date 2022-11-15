@@ -19,3 +19,6 @@ hexconversions.intToBlockObjectArray(123, blockArray).forEach(element => {
 const blockArrayWithInt = [{ startBit: 1, blockSize: 2, intValue: 2 }, { startBit: 3, blockSize: 2, intValue: 3 }];
 
 console.log(hexconversions.blockObjectArrayToInt(blockArrayWithInt));
+
+
+console.log(hexconversions.maskAndUpdateIntWithBlockObject(15, { startBit: 0, blockSize: 2, intValue: 2 }));

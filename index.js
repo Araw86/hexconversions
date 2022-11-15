@@ -61,6 +61,16 @@ const blockToInt = (blockValue, startBit, blockSize) => ((blockValue & (Math.pow
  */
 const blockObjectArrayToInt = (blockArray) => blockArray.reduce((value, currentBlock) => (value | blockToInt(currentBlock.intValue, currentBlock.startBit, currentBlock.blockSize)), 0);
 
-const hexconversions = { hexToInt: hexToInt, intToHex: intToHex, intToBits: intToBits, intToBlock: intToBlock, blockToInt: blockToInt, intToBlockObjectArray: intToBlockObjectArray, blockObjectArrayToInt: blockObjectArrayToInt };
+/**
+ * Function take int and mask it based on blockObject and replace content with block object value. The mask size is by default 32 bits possible to change
+ * @param {integer} intValue value to be masked and updated
+ * @param {Object} blockObject blockObject containing info which bits to mask and value to replace it format: [{ startBit: 1, blockSize: 2, intValue: 2 },...]
+ * @param {integer} nBits masking size 
+ * @returns 
+ */
+const maskAndUpdateIntWithBlockObject = (intValue, blockObject, nBits = 32) => ((intValue & ((Math.pow(2, nBits) - 1) ^ blockToInt(Math.pow(2, blockObject.blockSize) - 1, blockObject.startBit, blockObject.blockSize))) | blockToInt(blockObject.intValue, blockObject.startBit, blockObject.blockSize));
+
+
+const hexconversions = { hexToInt: hexToInt, intToHex: intToHex, intToBits: intToBits, intToBlock: intToBlock, blockToInt: blockToInt, intToBlockObjectArray: intToBlockObjectArray, blockObjectArrayToInt: blockObjectArrayToInt, maskAndUpdateIntWithBlockObject: maskAndUpdateIntWithBlockObject };
 
 module.exports = hexconversions;
