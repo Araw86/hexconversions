@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "description": "converting hex values",
   "main": "index.js",
-  "author": "Radek Ripa",
+  "author": "Radek Ripa <ripa.r@seznam.cz>",
   "license": "MIT",
-  "private": true,
   "repository": {
     "url": "https://github.com/Araw86/hexconversions",
     "type": "git"
-  }
+  },
+  "files": [
+    "index.js",
+    "readme.md"
+  ]
 }
